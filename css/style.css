@@ -492,6 +492,14 @@ select {
   display: flex;
 }
 
+.home .container {
+  margin: auto;
+  align-items: center;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .home .intro {
   text-align: center;
   width: 50vh;
@@ -613,6 +621,7 @@ select {
   line-height: 25px;
   color: #020203;
   margin: 0;
+  text-align: justify;
 }
 
 .about .about-content .about-text .logoskill {
@@ -1606,7 +1615,21 @@ select {
 
 /* Responsive */
 
-@media (max-width: 1199px) {
+@media (max-width: 1050px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .home .intro {
+    padding: 10%;
+  }
+
+  .certificate .certificate-item .certificate-text {
+    width: 100%;
+    max-width: 80%;
+  }
+
   .section .container {
     padding-top: 70px;
   }
