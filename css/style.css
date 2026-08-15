@@ -473,8 +473,17 @@ select {
   padding-left: 5px;
 }
 
-.aside .nav li a .fa {
+.aside .nav li a .fa,
+.aside .nav li a .fas {
   margin-right: 5px;
+}
+
+/* Teaching's icon uses the FontAwesome 5 "fas" class (needed for fa-chalkboard-teacher,
+   which has no "fa" glyph). ".fas" is colored dodgerblue globally in theme.css, so scope
+   it back to the link's own color here — inherits black by default and dodgerblue on
+   hover/active, matching every other nav icon. */
+.aside .nav li a .fas {
+  color: inherit;
 }
 
 .aside .copyright-text {
@@ -808,6 +817,15 @@ select {
   line-height: 25px;
   color: #504e70;
   margin: 0;
+}
+
+.about .about-content .timeline .timeline-item .timeline-title .timeline-logo {
+  height: 26px;
+  width: 26px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 4px;
 }
 
 /* Certificates Section */

@@ -4,13 +4,22 @@
 
 
 // Preloader
+// script.js is now injected by js/include.js only after the section fetches
+// resolve, so window's "load" event may already have fired by the time this
+// runs — guard for that instead of only listening for it.
 
-window.addEventListener("load", function () {
+function hidePreloader() {
   document.querySelector(".preloader").classList.add("opacity-0");
   setTimeout(function () {
     document.querySelector(".preloader").style.display = "none";
   }, 1000);
-});
+}
+
+if (document.readyState === "complete") {
+  hidePreloader();
+} else {
+  window.addEventListener("load", hidePreloader);
+}
 
 // iTyped
 
